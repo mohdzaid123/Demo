@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
+import Logout from "./auth/Logout";
 
 class Header extends Component {
   render() {
     let auth = localStorage.getItem("token");
-    
+
     let authLinks;
     if (auth) {
       authLinks = (
@@ -20,6 +21,7 @@ class Header extends Component {
               Home
             </Link>
           </div>
+          <Logout />
         </div>
       );
     } else {
